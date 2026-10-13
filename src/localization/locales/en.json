@@ -1,0 +1,225 @@
+{
+  "tabTitle": {
+    "offer": "Enter card details",
+    "bill": "Payment result",
+    "processing": "Request processing",
+    "default": "Payment processing",
+    "threeDSLight": "Request processing"
+  },
+  "ui": {
+    "input": {
+      "pan": { "label": "Card number" },
+      "expiryMonth": { "label": "Date" },
+      "expiryYear": { "label": "Date" },
+      "cvc": {
+        "label": {
+          "default": "CVV",
+          "visa": "CVV2",
+          "mastercard": "CVC2",
+          "gclocal": "CVC2",
+          "american_express": "CSC",
+          "american_express_debit": "CSC",
+          "upi": "CVN2"
+        }
+      },
+      "cardholder": {
+        "label": "Cardholder Name",
+        "placeholder": "NAME SURNAME"
+      },
+      "agreement": { "label": "I Agree" },
+      "amount": { "label": "Amount {currency}" },
+      "email": { "label": "E-mail" },
+      "otp": { "placeholder": "One time code" },
+      "saveCard": {
+        "label": "I agree to save my card and agree with {link}",
+        "terms": "conditions",
+        "termsUrl": "https://conditions.bog.ge/m/u/LegalFiles/2Terms_GEO.pdf"
+      }
+    },
+    "btn": {
+      "pay": "PAY NOW ({amount} {currency})",
+      "transfer": "TRANSFER ({amount} {currency})",
+      "pay-with": "PAY WITH",
+      "pay-scool-bonus": "PAY WITH SCOOL",
+      "pay-mr-bonus": "PAY WITH MR POINTS",
+      "print": "PRINT RESULT",
+      "to-market": "RETURN TO MERCHANT",
+      "send": "SEND",
+      "getOtpCode": "Receive another code",
+      "cancel": "CANCEL"
+    }
+  },
+  "components": {
+    "loader": "Processing request. Please wait.",
+    "creditcard": {
+      "src": { "label": "ENTER CARD DETAILS" },
+      "dst": { "label": "RECEIVER’S CARD NUMBER" }
+    },
+    "form-header": {
+      "title": {
+        "amount": "Amount:",
+        "bonus": "PLUS Points:",
+        "mr-bonus": "MR Points:",
+        "scool-bonus": "SCool Points:"
+      }
+    }
+  },
+  "pages": {
+    "main": {
+      "pay-info": "Participation in Bank of Georgia bonus program is subject to Terms and Conditions agreed with Bank of Georgia.",
+      "commission": {
+        "common": "Commission {commission} %, but not less {minimum} {currency}",
+        "minimum": "Commission {minimum} {currency}",
+        "percent": "Commission {commission} %"
+      },
+      "paymentBtnsTitle": "or",
+      "applePayError": "ApplePay payment is not supported on this device."
+    },
+    "threeDSLight": {
+      "table": {
+        "merchant": "Merchant",
+        "totalAmount": "Total amount",
+        "autorization": "3D AUTHORIZATION"
+      },
+      "otp": {
+        "title": "One-time code was sent to your number",
+        "timer": "New code can be requested in: 0 Sec.",
+        "expiredTimer": "One-time code has expired. Click the button «@:ui.btn.getOtpCode",
+        "sendingOtpResult": {
+          "success": "The code was sent successfully. Check SMS message",
+          "failed": "Error sending verification code"
+        }
+      },
+      "paymentError": "Check the correctness of the code. Remaining tries: {0}",
+      "footer": { "phone": { "title": "To contact us", "value": "*1414" } }
+    },
+    "offer": { "titleTreeDSInfo": "To confirm, follow these steps" },
+    "result": {
+      "error": "Error",
+      "table": {
+        "issuerId": "Card emitent:",
+        "brand": "Card type:",
+        "responseCodeDetails": "Response code:",
+        "pan": { "src": "Card number:", "dst": "Receiver’s card number:" },
+        "merchant": "Web site:",
+        "trxId": "Transaction ID:",
+        "date": "Date/Time:",
+        "approvalCode": "Authorization code:",
+        "rrn": "RRN:",
+        "status": {
+          "title": "Status:",
+          "description": {
+            "SUCCESS": "OK",
+            "INTERIM_SUCCESS": "First phase of payment completed",
+            "FAILED": "Payment is not completed",
+            "DECLINED": "Payment is not completed",
+            "UNKNOWN": "Payment is not completed. Operation is not finished"
+          }
+        }
+      },
+      "offLine": {
+        "attention": "Attention! ",
+        "msg": "Payment details failed to send to service company. Confirmation will be sent again later."
+      },
+      "footer": {
+        "email": "This address will be used for sending a payment result",
+        "emailSentError": "It's impossible to send an email for technical reasons. Try again",
+        "emailSentSuccess": "Payment result is sent to e-mail"
+      }
+    },
+    "error": {
+      "API_ERR": {
+        "title": "Payment error",
+        "info": "The server encountered unforeseen errors while transaction processing. Please, try to pay later.",
+        "btn": "RETURN TO MERCHANT"
+      }
+    }
+  },
+  "footer": {
+    "info": "Data transfer over the Internet is secured by TLS protocol {0} Data are protected according to international standard PCI DSS"
+  },
+  "errors": {
+    "api": {
+      "BAD_REQUEST": "Failed to get a response from the server. Try again later",
+      "OFFER_TIMEOUT": "Customer response waiting time has expired",
+      "AUTHENTICATION_FAILED": "Error in 3DS-authentication.",
+      "LIMIT_EXCEEDED": "To conduct an operation one of the limits of the card is exceeded. Contact shop Customer Support Service.",
+      "CPA_FAILED": "Please try again later.",
+      "CPA_SSL_FAILED": "Please try again later.",
+      "DECLINE_CARD_AUTHORIZATION": "Transaction authorization for this card is not allowed. Contact the card issuer.",
+      "CPA_REJECTED": "Please contact the store's customer service.",
+      "AUTHENTICATION_TIMEOUT": "The time has elapsed to confirm the operation (3DS password not entered).",
+      "SYSTEM_ERROR": "Please contact the store's customer service.",
+      "OTP_BLOCKED": "On-line transactions are temporarily prohibited on your card",
+      "SRC_CARD_NOT_SUPPORTED": "Card not supported",
+      "DST_CARD_NOT_SUPPORTED": "Transfer to this card is not possible",
+      "CARD_NOT_SUPPORTED": "Card not supported",
+      "CARD_EXPIRED": "",
+      "CARD_NOT_FOUND": "",
+      "CARD_DATA_INVALID": "Check that the card details are filled in correctly.",
+      "CARD_FAULT": "Your card transaction was declined by the bank.",
+      "CARD_BLOCKED": "",
+      "FM_REJECTED": "Use another payment card or contact the store's customer support.",
+      "PREAUTHORIZATION_OK": "Funds blocking completed successfully",
+      "INSUFFICIENT_FUNDS": "Insufficient funds on the card.",
+      "DECLINED_BY_ACQUIRER": "The transaction was rejected by the beneficiary bank.",
+      "DECLINED_BY_ISSUER": "The operation was rejected by the bank that issued your card.",
+      "AUTHORIZATION_FAILED": "Authorisation Error.",
+      "AUTHENTICATION_DECLINED": "",
+      "OFFER_DECLINED": "The payment was canceled at the initiative of the client.",
+      "DECLINED_BY_EXTERNAL_SYSTEM": "The operation was rejected by the external system.",
+      "UNKNOWN": "Specify the result of the operation in the customer support service of the store",
+      "THREE_DS_PREPARATION_TIMEOUT": "",
+      "BANK_SYSTEM_ERROR": "",
+      "COMMUNICATION_ERROR": "",
+      "CARD_TOKEN_UNRESOLVED": "Please contact the store's customer service.",
+      "CARD_AUTHENTICATION_FAILD": "Error in 3DS-authentication.",
+      "UNKNOWN_DEVICE": "Error in 3DS-authentication.",
+      "UNSUPPORTED_DEVICE": "Error in 3DS-authentication.",
+      "EXCEEDS_AUTHENTICATION_FREQUENCY_LIMIT": "Error in 3DS-authentication.",
+      "EXPIRED_CARD": "Error in 3DS-authentication.",
+      "INVALID_CARD_NUMBER": "Error in 3DS-authentication.",
+      "INVALID_TRANSACTION": "Error in 3DS-authentication.",
+      "NO_CARD_RECORD": "Error in 3DS-authentication.",
+      "SECURITY_FAILURE": "Error in 3DS-authentication.",
+      "STOLEN_CARD": "Error in 3DS-authentication.",
+      "SUSPECTED_FRAUD": "Error in 3DS-authentication.",
+      "TRANSACTION_NOT_PERMITTED_TO_CARDHOLDER": "Error in 3DS-authentication.",
+      "CARDHOLDER_NOT_ENROLLED_IN_SERVICE": "Error in 3DS-authentication.",
+      "TRANSACTION_TIMED_OUT_AT_THE_ACS": "Error in 3DS-authentication.",
+      "LOW_CONFIDENCE": "Error in 3DS-authentication.",
+      "MEDIUM_CONFIDENCE": "Error in 3DS-authentication.",
+      "HIGH_CONFIDENCE": "Error in 3DS-authentication.",
+      "VERY_HIGH_CONFIDENCE": "Error in 3DS-authentication.",
+      "EXCEEDS_ACS_MAXIMUM_CHALLENGES": "Error in 3DS-authentication.",
+      "NON_PAYMENT_TRANSACTION_NOT_SUPPORTED": "Error in 3DS-authentication.",
+      "THREE_RI_TRANSACTION_NOT_SUPPORTED": "Error in 3DS-authentication.",
+      "ACS_TECHNICAL_ISSUE": "Error in 3DS-authentication.",
+      "DECOUPLED_AUTHENTICATION_REQUIRED_BY_ACS": "Error in 3DS-authentication.",
+      "THREE_DS_REQUIRED_DECOUPLED_MAX_EXPIRY_TIME_EXCEEDED": "Error in 3DS-authentication.",
+      "DECOUPLED_AUTHENTICATION_WAS_PROVIDED_INSUFFICIENT_TIME_TO_AUTHENTICATE_CARDHOLDER": "Error in 3DS-authentication.",
+      "AUTHENTICATION_ATTEMPTED_BUT_NOT_PERFORMED_BY_THE_CARDHOLDER": "Error in 3DS-authentication.",
+      "BIN_ATTACK": "Error in 3DS-authentication.",
+      "DECLINE_CARD_VERIFICATION": "DECLINE_CARD_VERIFICATION"
+    },
+    "app": {
+      "validation": {
+        "required": "Please, fill missed field",
+        "requiredEmail": "Enter e-mail",
+        "pan": "Invalid card number",
+        "expiryMonth": "Month between 01 and 12",
+        "expiryMonthCard": "Invalid month",
+        "expiryYear": "Invalid year",
+        "length": "Enter {number} digits",
+        "amountMin": "The minimum transfer amount must be at least 0.01",
+        "panLength": "Please enter at least {number} digits",
+        "latin": "Only Latin characters are supported",
+        "duplicatePan": "The card number of the recipient and sender must not match",
+        "email": "Check the correctness of the entered e-mail",
+        "bgDstBin": "Transfer to this card is not possible. Only Georgian cards are supported",
+        "p2pSrcPan": "Transfer from this card is not possible. Only {0} and {1} are supported",
+        "bonusNotSupported": "Payment with bonus points is not possible with the given card"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+header {
+  margin: 25px auto 34px;
+  width: 568px;
+  img {
+    height: 39px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}

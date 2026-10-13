@@ -1,0 +1,32 @@
+.checkbox {
+  label {
+    color: #646464;
+    font-size: 12px;
+
+    &::before {
+      content: "";
+      background: #fff no-repeat center center;
+      border: 1px solid #ccc;
+      display: inline-block;
+      margin-right: 12px;
+      transition: all 0.3s;
+      vertical-align: text-bottom;
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  input {
+    opacity: 0;
+    position: absolute;
+    width: initial;
+
+    &:checked + label::before {
+      background-image: url("~@/img/checkmark.svg");
+    }
+    &:focus + label::before {
+      border-color: #f3751b;
+      box-shadow: 0 0 1px 0 #f3751b;
+    }
+  }
+}

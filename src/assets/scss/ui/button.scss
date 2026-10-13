@@ -1,0 +1,91 @@
+$btn-primary-color: #f3751b;
+$btn-secondary-color: #c3c3c3;
+$btn-bonus-primary-color: #00a885;
+$btn-bonus-secondary-color: #4a858f;
+
+.btn {
+  border: 0;
+  box-shadow: 0 1px 6px 0 rgb(0 0 0 / 20%);
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "BOG2018Headline", sans-serif;
+  height: 48px;
+  outline: 0;
+  transition: all 0.3s;
+  padding: 0;
+  width: 100%;
+
+  &-primary {
+    background-color: $btn-primary-color;
+  }
+
+  &-secondary {
+    background-color: $btn-secondary-color;
+  }
+
+  &-mr-bonus {
+    background: linear-gradient(
+      45deg,
+      $btn-bonus-primary-color,
+      $btn-bonus-secondary-color
+    );
+
+    &:disabled {
+      filter: grayscale(0.8);
+    }
+  }
+
+  &-plus {
+    align-items: center;
+    background: url("~@/img/btn-bonus-plus.png") right no-repeat,
+      linear-gradient(
+        45deg,
+        $btn-bonus-primary-color,
+        $btn-bonus-secondary-color
+      );
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &::after {
+      background: url("~@/img/plus+.png") center no-repeat;
+      content: "";
+      display: block;
+      height: 28px;
+      margin-left: 5px;
+      position: relative;
+      top: -5px;
+      width: 54px;
+    }
+
+    &:disabled {
+      filter: grayscale(0.8);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    background-color: #faa172;
+    cursor: default;
+  }
+
+  &:disabled {
+    opacity: 1;
+  }
+
+  &.gpay-button.new_style {
+    transition: none;
+    width: 100%;
+
+    &:hover {
+      background-color: #3c4043;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.input {
+  background: #fff;
+
+  &__group {
+    box-sizing: border-box;
+    border: 1px solid #d8d8d8;
+    height: 62px;
+    padding: 8px 18px 10px;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 600px) {
+      max-height: 57px;
+      padding: 7px 18px 0;
+    }
+
+    &.invalid {
+      border-color: #ee3b37;
+    }
+
+    label {
+      color: #646464;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    label[for="expiryYear"] {
+      visibility: hidden;
+    }
+
+    input {
+      border: none;
+      color: #3a3a3a;
+      font-size: 16px;
+      font-family: inherit;
+      font-weight: 600;
+      display: block;
+      outline: none;
+      padding: 6px 0 7px;
+      min-width: 25px;
+      width: 100%;
+
+      &::placeholder {
+        color: #3a3a3a;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: "BOG2018Headline", sans-serif;
+        opacity: 0.5;
+      }
+    }
+
+    input[name="src-pan"],
+    input[name="dst-pan"] {
+      &::placeholder {
+        font-weight: 600;
+      }
+    }
+
+    input[name="cardholder"] {
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+
+    input[name="cvc"] {
+      font-family: "Bullet";
+      font-size: 20px;
+      height: 20px;
+
+      &::placeholder {
+        font-family: "BOG2018", sans-serif;
+        font-size: 20px;
+      }
+    }
+
+    &.form-body__amount-input,
+    &.form-body__cardholder {
+      height: 64px;
+      margin-bottom: 0;
+
+      @media screen and (max-width: 600px) {
+        max-height: 64px;
+      }
+    }
+  }
+
+  &__error {
+    color: #ee3b37;
+    font-size: 12px;
+  }
+}
+
+div[name="expiryYear"] {
+  .input {
+    .input__group {
+      padding-left: 14px;
+    }
+  }
+}

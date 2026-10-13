@@ -1,0 +1,23 @@
+.gpayButton {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #000; // black
+  background-image: url('@/assets/img/gpay-logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  // Стили для варианта "short" и "en" можно добавить сюда при необходимости
+}

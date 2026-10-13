@@ -1,0 +1,35 @@
+.applePayError {
+  color: #ff6d6d;
+  font-weight: 700;
+  text-align: center;
+
+  &.withMargin {
+    margin-bottom: 15px;
+  }
+}
+
+.paymentButtons {
+  padding-bottom: 15px;
+
+  .title {
+    color: #999;
+    font-weight: 700;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .item {
+    width: 100%;
+  }
+
+  .newStyle {
+    // Стили для new_style из оригинала (:class="{ new_style: true }")
+    // Добавьте сюда конкретные стили, если они есть в глобальном CSS
+  }
+}

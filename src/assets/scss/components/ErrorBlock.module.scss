@@ -1,0 +1,68 @@
+$error-color: #f57575;
+
+@mixin commonErrIconStyle {
+  position: relative;
+  background-color: $error-color;
+  box-shadow: 0 0 0 5px $error-color;
+  border-radius: 2px;
+  height: 2px;
+  width: 21px;
+}
+
+@mixin pseudoElErrIconStyle {
+  content: "";
+  position: absolute;
+  top: -9px;
+}
+
+.errorBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .errorIcon {
+    position: relative;
+    display: inline-block;
+    margin: 22px 0 8px;
+
+    div,
+    div::before,
+    div::after {
+      @include commonErrIconStyle;
+    }
+
+    div::before {
+      @include pseudoElErrIconStyle;
+      left: -5px;
+      transform: rotate(-60deg);
+    }
+
+    div::after {
+      @include pseudoElErrIconStyle;
+      right: -5px;
+      transform: rotate(60deg);
+    }
+
+    span {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      z-index: 1; // Чтобы текст был поверх фона
+    }
+  }
+
+  .errorCode {
+    font-size: 14px;
+  }
+
+  .errorText {
+    color: $error-color;
+    font-weight: 700;
+    text-align: center;
+  }
+}

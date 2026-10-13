@@ -1,0 +1,182 @@
+const PAYMENT_STATUS = {
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+  FAILED: "FAILED",
+  INTERIM_SUCCESS: "INTERIM_SUCCESS",
+  UNKNOWN: "UNKNOWN",
+  DECLINED: "DECLINED",
+  SUSPENDED: "SUSPENDED",
+  REGISTERED: "registered", //Значение "registered" в нижнем регистре только для страницы регистрации
+  REGISTRATION_ATTEMPTS_EXHAUSTED: "REGISTRATION_ATTEMPTS_EXHAUSTED",
+};
+
+const ORDER_STATUS = {
+  REGISTERED: "REGISTERED",
+};
+
+const STATE = {
+  OFFER: "offer",
+  RESULT: "result",
+  REDIRECT: "redirect",
+  IN_PROGRESS: "in_progress",
+  CONFIRMATION: "confirmation",
+  AUTHENTICATION: "authentication",
+  "3DS2PREPARE": "3ds2_prepare",
+  "3DS2INFO": "3ds2_info",
+  IFRAME: "iframe",
+};
+
+const CARD_STATUS = {
+  VERIFIED: "VERIFIED",
+  UNVERIFIED: "UNVERIFIED",
+  VERIFYING: "VERIFYING",
+  VERIFICATION_FAILED: "VERIFICATION_FAILED",
+  SUCCESS: "SUCCESS",
+};
+
+const SIZE_SCREEN = {
+  SIZE_256: 256,
+  SIZE_576: 576,
+  SIZE_679: 679,
+};
+
+const PAYMENT_ID = {
+  AFT: "aft",
+  OCT: "oct",
+  TRANSP_DEBT: "transp_debt",
+  GAMBLING: "gambling",
+  P2P: "p2p",
+};
+
+const APPLE_PAY_VERSION = {
+  one: 1,
+  eleven: 11,
+  fourteen: 14,
+};
+
+const SRC_TYPE = {
+  gazprom_pay: "gazprom_pay",
+  mir_pay: "mir_pay",
+  sber_pay: "sber_pay",
+  sbp: "sbp",
+  yandex_split: "yandex_split",
+  yandex_card: "yandex_card",
+  apple_pay: "apple_pay",
+  google_pay: "google_pay",
+  wb_pay: "wb_pay",
+};
+
+const CURRENCY = {
+  RUB: "RUB",
+  USD: "USD",
+  EUR: "EUR",
+  GEL: "GEL",
+};
+
+const INPUT_FIELDS_MIN_LENGTH = {
+  CVC: 2,
+  EXPIRY: 4,
+  PAN: 18,
+};
+
+const MIN_PAN_LENGTH_OF_CARD_BRAND_DEFINITION = 6;
+
+const API_ERROR = {
+  UNEXPECTED_REQUEST: "UNEXPECTED_REQUEST",
+  MERCHANT_BLOCKED: "MERCHANT_BLOCKED",
+  TRANSACTION_NOT_FOUND: "TRANSACTION_NOT_FOUND",
+  MERCHANT_NOT_FOUND: "MERCHANT_NOT_FOUND",
+  MISSING_PARAMETER: "MISSING_PARAMETER",
+  ACCESS_DENIED: "ACCESS_DENIED",
+  OPERATION_NOT_AVAILABLE: "OPERATION_NOT_AVAILABLE",
+  ACQUIRING_TYPE_NOT_SUPPORTED_BY_MERCHANT:
+    "ACQUIRING_TYPE_NOT_SUPPORTED_BY_MERCHANT",
+  CARD_NOT_SUPPORTED: "CARD_NOT_SUPPORTED",
+  SRC_CARD_NOT_SUPPORTED: "SRC_CARD_NOT_SUPPORTED",
+  DST_CARD_NOT_SUPPORTED: "DST_CARD_NOT_SUPPORTED",
+  OTP_BLOCKED: "OTP_BLOCKED",
+  INVALID_OTP: "INVALID_OTP",
+  AMOUNT_MISMATCH: "AMOUNT_MISMATCH",
+  CURRENCY_MISMATCH: "CURRENCY_MISMATCH",
+  CARD_TOKEN_UNRESOLVED: "CARD_TOKEN_UNRESOLVED",
+  INTERNAL_ERROR: "INTERNAL_ERROR",
+  CARD_RANGE_BLOCKED: "CARD_RANGE_BLOCKED",
+  INVOICE_NOT_FOUND: "INVOICE_NOT_FOUND",
+  PORTAL_NOT_FOUND: "PORTAL_NOT_FOUND",
+  TRANSACTION_NOT_STARTED: "TRANSACTION_NOT_STARTED",
+};
+
+const CARD_BRAND = {
+  VISA: "VISA",
+  MASTERCARD: "MASTERCARD",
+  AMERICAN_EXPRESS: "AMERICAN_EXPRESS",
+  AMERICAN_EXPRESS_DEBIT: "AMERICAN_EXPRESS_DEBIT",
+  GCLOCAL: "GCLOCAL",
+  UPI: "UPI",
+};
+
+const EXPIRATION_TIMER_DATE_TIME_OPTIONS = {
+  minute: "2-digit",
+  second: "2-digit",
+};
+
+const DEFAULT_PAN_MASKA = [
+  "0000",
+  "0000 0000",
+  "0000 0000 0000",
+  "0000 0000 0000 0000",
+  "0000 0000 0000 0000 000",
+];
+
+const SBER_PAY_APP_MODAL_STATUS = {
+  LOADING: "loading",
+  FAILED: "failed",
+  SUCCESS: "success",
+  ERROR: "error",
+  PREPARE: "prepare",
+};
+
+const SBER_PAY_SBOL_PAYMENT_STATUS = {
+  SUCCESS: "success",
+  RETURN: "return",
+};
+
+const CARD_ON_FILE = {
+  CIT: "CIT",
+  RECURRING: "RECURRING",
+  INSTALLMENT: "INSTALLMENT",
+};
+
+const PAYMENT_BUTTONS = {
+  gazprom_pay: 'gazpromPay',
+  sber_pay: 'sberPay',
+  sbp: 'sbp',
+  mir_pay: 'mirPay',
+  google_pay: 'googlePay',
+  apple_pay: 'applePay',
+  yandex_split: 'yandexSplit',
+  yandex_card: 'yandexCard',
+  wb_pay: 'wbPay',
+};
+
+export {
+  PAYMENT_STATUS,
+  ORDER_STATUS,
+  STATE,
+  CARD_STATUS,
+  SIZE_SCREEN,
+  PAYMENT_ID,
+  API_ERROR,
+  APPLE_PAY_VERSION,
+  SRC_TYPE,
+  CURRENCY,
+  INPUT_FIELDS_MIN_LENGTH,
+  CARD_BRAND,
+  MIN_PAN_LENGTH_OF_CARD_BRAND_DEFINITION,
+  EXPIRATION_TIMER_DATE_TIME_OPTIONS,
+  DEFAULT_PAN_MASKA,
+  SBER_PAY_APP_MODAL_STATUS,
+  CARD_ON_FILE,
+  SBER_PAY_SBOL_PAYMENT_STATUS,
+  PAYMENT_BUTTONS,
+};

@@ -1,0 +1,47 @@
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px 0;
+  padding: 32px;
+  &.without-shadow {
+    box-shadow: none;
+  }
+
+  &__text {
+    text-align: center;
+    width: 310px;
+  }
+}
+
+.bar {
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(243, 117, 27));
+  overflow: hidden;
+  outline: 1px solid #000;
+  height: 14px;
+  width: 212px;
+
+  &__wrapper {
+    animation: 1.5s linear infinite progress;
+    display: flex;
+    gap: 24px;
+    width: 250px;
+  }
+
+  &__line {
+    background: #fff;
+    width: 14px;
+    height: 100px;
+    margin-top: -28px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes progress {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -37px;
+  }
+}

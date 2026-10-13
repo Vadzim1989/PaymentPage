@@ -1,0 +1,15 @@
+@media print {
+  .form-body {
+    border-top: 2px solid rgb(0, 0, 0, 0.4);
+
+    .result-table {
+      border-bottom: 1px solid rgb(0, 0, 0, 0.4);
+    }
+  }
+
+  .form-footer,
+  footer,
+  .form-body .form-body__btn-group.bg {
+    display: none;
+  }
+}

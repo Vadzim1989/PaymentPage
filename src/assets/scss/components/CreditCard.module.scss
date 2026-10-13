@@ -1,0 +1,86 @@
+.creditCard {
+  position: relative;
+  margin: 5px 0 0;
+
+  &:has(:global(.hidden-on-desktop)) {
+    .header {
+      &.upi {
+        margin-bottom: 19px;
+      }
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 19px;
+
+    &.upi {
+      margin-bottom: 24px;
+    }
+  }
+
+  .label {
+    font-family: 'BOG2018Headline', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .brand {
+    position: absolute;
+    top: 51px;
+    right: 7px;
+    transition: top 0.3s;
+
+    img {
+      height: 32px;
+
+      @media screen and (max-width: 600px) {
+        max-width: 45px;
+      }
+    }
+
+    &.brandOutside {
+      top: 3px;
+
+      &.amex {
+        top: -3px;
+      }
+    }
+  }
+
+  .body {
+    border: 1px solid #d8d8d8;
+    display: flex;
+
+    @media screen and (max-width: 600px) {
+      border: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 16px;
+    }
+
+    &.invalid {
+      border: 1px solid #ee3b37;
+    }
+
+    :global(.input__error) {
+      display: none;
+    }
+
+    :global(.input__group) {
+      border: none;
+      margin: 0;
+    }
+
+    :global(.expiry-container) {
+      display: flex;
+      align-items: center;
+    }
+
+    :global(.input) {
+      margin: 0;
+    }
+  }
+}

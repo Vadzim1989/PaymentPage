@@ -1,0 +1,224 @@
+{
+  "tabTitle": {
+    "offer": "Введите данные карты",
+    "bill": "Результат платежа",
+    "processing": "Обработка запроса",
+    "default": "Проведение платежа",
+    "threeDSLight": "Обработка запроса"
+  },
+  "ui": {
+    "input": {
+      "pan": { "label": "Номер карты" },
+      "expiryMonth": { "label": "Срок" },
+      "expiryYear": { "label": "Срок" },
+      "cvc": {
+        "label": {
+          "default": "CVV",
+          "visa": "CVV2",
+          "mastercard": "CVC2",
+          "gclocal": "CVC2",
+          "american_express": "CSC",
+          "american_express_debit": "CSC",
+          "upi": "CVN2"
+        }
+      },
+      "cardholder": { "label": "Имя владельца", "placeholder": "ИМЯ ФАМИЛИЯ" },
+      "agreement": { "label": "Соглашаюсь" },
+      "amount": { "label": "Сумма {currency}" },
+      "email": { "label": "E-mail" },
+      "otp": { "placeholder": "Одноразовый код" },
+      "saveCard": {
+        "label": "Согласен сохранить мою карту и согласен с {link}",
+        "terms": "условиями",
+        "termsUrl": "https://conditions.bog.ge/m/u/LegalFiles/2Terms_GEO.pdf"
+      }
+    },
+    "btn": {
+      "pay": "ОПЛАТИТЬ ({amount} {currency})",
+      "transfer": "ПЕРЕВЕСТИ ({amount} {currency})",
+      "pay-with": "ОПЛАТИТЬ С",
+      "pay-mr-bonus": "ОПЛАТИТЬ MR БОНУСАМИ",
+      "pay-scool-bonus": "ОПЛАТИТЬ c SCOOL",
+      "print": "РАСПЕЧАТАТЬ РЕЗУЛЬТАТ",
+      "to-market": "ВЕРНУТЬСЯ В МАГАЗИН",
+      "send": "ОТПРАВИТЬ",
+      "getOtpCode": "Получите другой код",
+      "cancel": "ОТМЕНА"
+    }
+  },
+  "components": {
+    "loader": "Идет обработка запроса. Пожалуйста, подождите.",
+    "creditcard": {
+      "src": { "label": "ВВЕДИТЕ ДАННЫЕ КАРТЫ" },
+      "dst": { "label": "НОМЕР КАРТЫ ПОЛУЧАТЕЛЯ" }
+    },
+    "form-header": {
+      "title": {
+        "amount": "Сумма:",
+        "bonus": "PLUS Бонусы:",
+        "mr-bonus": "MR Бонусы:",
+        "scool-bonus": "SCool Бонусы:"
+      }
+    }
+  },
+  "pages": {
+    "main": {
+      "pay-info": "Условия участия клиентов в бонусной программе регулируются в рамках заключенных с Банком Грузии договоров.",
+      "commission": {
+        "common": "Комиссия {commission} %, но не менее {minimum} {currency}",
+        "minimum": "Комиссия {minimum} {currency}",
+        "percent": "Комиссия {commission} %"
+      },
+      "paymentBtnsTitle": "или",
+      "applePayError": "Платеж ApplePay не поддерживается на данном устройстве."
+    },
+    "threeDSLight": {
+      "table": {
+        "merchant": "Магазин",
+        "totalAmount": "Общая сумма",
+        "autorization": "3D AUTHORIZATION"
+      },
+      "otp": {
+        "title": "Одноразовый код был отправлен на ваш номер",
+        "timer": "Новый код можно запросить через: {0} сек.",
+        "expiredTimer": "Срок действия одноразового кода истек. Нажмите кнопку «@:ui.btn.getOtpCode",
+        "sendingOtpResult": {
+          "success": "Код был отправлен успешно. Проверьте SMS сообщение",
+          "failed": "Ошибка отправки кода подтверждения"
+        }
+      },
+      "paymentError": "Проверьте корректность кода. Осталось попыток: {0}",
+      "footer": { "phone": { "title": "Связаться с нами", "value": "*1414" } }
+    },
+    "offer": {
+      "titleTreeDSInfo": "Для подтверждения необходимо выполнить следующие действия"
+    },
+    "result": {
+      "error": "Ошибка",
+      "table": {
+        "issuerId": "Идентификатор банка-эмитента:",
+        "brand": "Тип карты:",
+        "responseCodeDetails": "Код ответа:",
+        "pan": { "src": "Номер карты:", "dst": "Номер карты получателя:" },
+        "merchant": "Web site:",
+        "trxId": "Идентификатор транзакции:",
+        "date": "Дата/время:",
+        "approvalCode": "Авторизационный код:",
+        "rrn": "RRN:",
+        "status": {
+          "title": "Статус:",
+          "description": {
+            "SUCCESS": "OK",
+            "INTERIM_SUCCESS": "Первая фаза платежа завершена",
+            "FAILED": "Платёж не выполнен",
+            "DECLINED": "Платёж не выполнен",
+            "UNKNOWN": "Платеж не выполнен. Операция не завершена"
+          }
+        }
+      },
+      "offLine": {
+        "attention": "Внимание! ",
+        "msg": "Не удалось зарегистрировать платеж в магазине. Ваш платеж будет зарегистрирован позже в off-line режиме."
+      },
+      "footer": {
+        "email": "Адрес будет использоваться для отправки результата оплаты",
+        "emailSentError": "Не удалось отправить чек на e-mail по техническим причинам. Повторите попытку",
+        "emailSentSuccess": "Чек успешно отправлен на e-mail"
+      }
+    },
+    "error": {
+      "API_ERR": {
+        "title": "Ошибка проведения платежа",
+        "info": "Во время обработки транзакции на сервере возникли непредвиденные ошибки. Пожалуйста, попробуйте повторить платеж позже.",
+        "btn": "ВЕРНУТЬСЯ В МАГАЗИН"
+      }
+    }
+  },
+  "footer": {
+    "info": "Безопасность передаваемой информации обеспечивается с помощью современного протокола обеспечения безопасности в сети интернет TLS {0} Данные защищены по международному стандарту PCI DSS"
+  },
+  "errors": {
+    "api": {
+      "BAD_REQUEST": "Не удалось получить ответ от сервера. Пожалуйста, повторите попытку позже",
+      "OFFER_TIMEOUT": "Истекло время ожидания ответа от пользователя",
+      "AUTHENTICATION_FAILED": "Ошибка при проведении 3DS-аутентификации",
+      "LIMIT_EXCEEDED": "Превышено одно из ограничений по карте на проведение операций. Обратитесь в Службу поддержки Клиентов магазина",
+      "CPA_FAILED": "Повторите попытку позднее.",
+      "CPA_SSL_FAILED": "Повторите попытку позднее.",
+      "DECLINE_CARD_AUTHORIZATION": "Выполнение транзакции для данной карты не разрешено . Обратитесь в банк-эмитент.",
+      "CPA_REJECTED": "Обратитесь в службу поддержки клиентов магазина.",
+      "AUTHENTICATION_TIMEOUT": "Истекло время для подтверждения операции (не введен 3DS-пароль).",
+      "SYSTEM_ERROR": "Обратитесь в службу поддержки клиентов магазина.",
+      "OTP_BLOCKED": "По вашей карте временно запрещены on-line операции",
+      "SRC_CARD_NOT_SUPPORTED": "Карта не поддерживается",
+      "DST_CARD_NOT_SUPPORTED": "Перевод на данную карту невозможен",
+      "CARD_NOT_SUPPORTED": "Карта не поддерживается",
+      "CARD_EXPIRED": "",
+      "CARD_NOT_FOUND": "",
+      "CARD_DATA_INVALID": "Проверьте правильность заполнения данных карты.",
+      "CARD_FAULT": "Операция по Вашей карте отклонена банком.",
+      "CARD_BLOCKED": "",
+      "FM_REJECTED": "Воспользуйтесь другой платежной картой или обратитесь в службу поддержки клиентов магазина.",
+      "PREAUTHORIZATION_OK": "Блокировка средств выполнена успешно",
+      "INSUFFICIENT_FUNDS": "Недостаточно средств на карте.",
+      "DECLINED_BY_ACQUIRER": "Операция отклонена банком-получателем платежа.",
+      "DECLINED_BY_ISSUER": "Операция отклонена банком, выпустившим Вашу карту.",
+      "AUTHORIZATION_FAILED": "Ошибка авторизации.",
+      "AUTHENTICATION_DECLINED": "",
+      "OFFER_DECLINED": "Платеж отменен по инициативе клиента.",
+      "DECLINED_BY_EXTERNAL_SYSTEM": "Операция отклонена внешней системой.",
+      "UNKNOWN": "Уточните результат операции в cлужбе поддержки клиентов магазина.",
+      "THREE_DS_PREPARATION_TIMEOUT": "",
+      "BANK_SYSTEM_ERROR": "",
+      "COMMUNICATION_ERROR": "",
+      "CARD_TOKEN_UNRESOLVED": "Обратитесь в службу поддержки клиентов магазина",
+      "CARD_AUTHENTICATION_FAILD": "Ошибка при проведении 3DS-аутентификации",
+      "UNKNOWN_DEVICE": "Ошибка при проведении 3DS-аутентификации",
+      "UNSUPPORTED_DEVICE": "Ошибка при проведении 3DS-аутентификации",
+      "EXCEEDS_AUTHENTICATION_FREQUENCY_LIMIT": "Ошибка при проведении 3DS-аутентификации",
+      "EXPIRED_CARD": "Ошибка при проведении 3DS-аутентификации",
+      "INVALID_CARD_NUMBER": "Ошибка при проведении 3DS-аутентификации",
+      "INVALID_TRANSACTION": "Ошибка при проведении 3DS-аутентификации",
+      "NO_CARD_RECORD": "Ошибка при проведении 3DS-аутентификации",
+      "SECURITY_FAILURE": "Ошибка при проведении 3DS-аутентификации",
+      "STOLEN_CARD": "Ошибка при проведении 3DS-аутентификации",
+      "SUSPECTED_FRAUD": "Ошибка при проведении 3DS-аутентификации",
+      "TRANSACTION_NOT_PERMITTED_TO_CARDHOLDER": "Ошибка при проведении 3DS-аутентификации",
+      "CARDHOLDER_NOT_ENROLLED_IN_SERVICE": "Ошибка при проведении 3DS-аутентификации",
+      "TRANSACTION_TIMED_OUT_AT_THE_ACS": "Ошибка при проведении 3DS-аутентификации",
+      "LOW_CONFIDENCE": "Ошибка при проведении 3DS-аутентификации",
+      "MEDIUM_CONFIDENCE": "Ошибка при проведении 3DS-аутентификации",
+      "HIGH_CONFIDENCE": "Ошибка при проведении 3DS-аутентификации",
+      "VERY_HIGH_CONFIDENCE": "Ошибка при проведении 3DS-аутентификации",
+      "EXCEEDS_ACS_MAXIMUM_CHALLENGES": "Ошибка при проведении 3DS-аутентификации",
+      "NON_PAYMENT_TRANSACTION_NOT_SUPPORTED": "Ошибка при проведении 3DS-аутентификации",
+      "THREE_RI_TRANSACTION_NOT_SUPPORTED": "Ошибка при проведении 3DS-аутентификации",
+      "ACS_TECHNICAL_ISSUE": "Ошибка при проведении 3DS-аутентификации",
+      "DECOUPLED_AUTHENTICATION_REQUIRED_BY_ACS": "Ошибка при проведении 3DS-аутентификации",
+      "THREE_DS_REQUIRED_DECOUPLED_MAX_EXPIRY_TIME_EXCEEDED": "Ошибка при проведении 3DS-аутентификации",
+      "DECOUPLED_AUTHENTICATION_WAS_PROVIDED_INSUFFICIENT_TIME_TO_AUTHENTICATE_CARDHOLDER": "Ошибка при проведении 3DS-аутентификации",
+      "AUTHENTICATION_ATTEMPTED_BUT_NOT_PERFORMED_BY_THE_CARDHOLDER": "Ошибка при проведении 3DS-аутентификации",
+      "BIN_ATTACK": "Ошибка при проведении 3DS-аутентификации",
+      "DECLINE_CARD_VERIFICATION": "DECLINE_CARD_VERIFICATION"
+    },
+    "app": {
+      "validation": {
+        "required": "Заполните пропущенное поле",
+        "requiredEmail": "Введите e-mail для отправки чека",
+        "pan": "Некорректный номер карты",
+        "expiryMonth": "Месяц в диапазоне 01-12",
+        "expiryMonthCard": "Некорректный месяц",
+        "expiryYear": "Некорректный год",
+        "length": "Введите {number} цифры",
+        "amountMin": "Минимальная сумма перевода должна быть не менее 0.01",
+        "panLength": "Введите минимум {number} цифр",
+        "latin": "Допускаются только латинские буквы",
+        "duplicatePan": "Номер карты получателя и отправителя не должны совпадать",
+        "email": "Проверьте правильность введенного e-mail",
+        "bgDstBin": "Перевод на данную карту невозможен. Поддерживаются только карты грузинских банков",
+        "p2pSrcPan": "Перевод с данной карты невозможен. Поддерживаются только карты {0} и {1}",
+        "bonusNotSupported": "Оплата бонус баллами с помощью данной карты невозможна"
+      }
+    }
+  }
+}
