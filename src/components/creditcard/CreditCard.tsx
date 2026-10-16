@@ -120,9 +120,18 @@ export const CreditCard: React.FC<CreditCardProps> = ({
             ? brandImagesList 
             : Object.values(brandImagesList);
         
-        return images.map((img, index) => (
-            <img key={`${img}-${index}`} src={`${img}?v=${imageTimestamp}`} alt="ps" />
-        ));
+        return images.map((img, index) => {
+            const isDataUri = typeof img === 'string' && img.startsWith('data:');
+            const imageSrc = isDataUri ? img : `${img}?v=${imageTimestamp}`;
+
+            return (
+                <img 
+                    key={`${index}`}
+                    src={imageSrc}
+                    alt="ps"
+                />
+            );
+        });
     };
 
     return (

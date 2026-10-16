@@ -14,6 +14,7 @@ import {
 import { get3dsVersion } from "@/utils/3dsv2helper";
 import { getCustomerReceiptUrl } from "@/utils/customerReceiptUrl";
 import { loadFromStorage } from "@/utils/storageUtils";
+import { getQueryParams } from "@/utils/queryParams";
 
 import type { RequestData } from "@/types";
 
@@ -54,8 +55,8 @@ export function usePayment(skipParams = false, resultCb?: () => void) {
     );
 
     const query = useMemo(
-        () => Object.fromEntries(searchParams.entries()),
-        [searchParams],
+        () => getQueryParams(location.search),
+        [location.search],
     );
 
     const paymentToken = useMemo(

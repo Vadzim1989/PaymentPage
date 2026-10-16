@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { SRC_TYPE } from "@/constants";
 import { getSberPayBackUrl } from "@/utils/stateSberPayInProgress";
+import { getQueryParams } from "@/utils/queryParams";
 
 type QueryParams = Record<string, string>;
 const enableApiLangParam = window?.settings?.enableApiLangParam;
@@ -73,11 +74,10 @@ export function useUrlParser() {
   const location = useLocation();
   const { setLang } = useLang();
 
-  // Парсим строку поиска в объект и кешируем результат
-  const rawQuery = useMemo(() => {
-    const searchParams = new URLSearchParams(location.search);
-    return Object.fromEntries(searchParams.entries()) as QueryParams;
-  }, [location.search]);
+  const rawQuery = useMemo(
+    () => getQueryParams(location.search), 
+    [location.search],
+  );
 
   const query = useMemo(() => sanitizeQueryParams(rawQuery), [rawQuery]);
 

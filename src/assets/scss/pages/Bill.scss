@@ -1,0 +1,157 @@
+.form-body {
+  border-bottom: none;
+  .error-block {
+    margin: 26px 0 0;
+    padding: 0 26px 0 56px;
+  }
+
+  .result-table {
+    padding: 20px 47px 18px;
+
+    @media screen and (max-width: 400px) {
+      padding: 20px 10px 18px;
+    }
+    .item {
+      column-gap: 48px;
+      display: flex;
+      padding: 5px 0;
+
+      @media screen and (max-width: 400px) {
+        column-gap: 35px;
+      }
+
+      &__key {
+        font-size: 14px;
+        flex-basis: 46%;
+        flex-shrink: 0;
+      }
+
+      &__value {
+        font-size: 14px;
+        font-weight: bold;
+        flex-basis: 45%;
+        min-width: 96px;
+        word-wrap: break-word;
+
+        &.success {
+          color: #259800;
+        }
+
+        & .link {
+          color: #000;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__off-line {
+    padding: 0 47px 18px;
+    margin-top: -2px;
+
+    @media screen and (max-width: 400px) {
+      padding: 0 10px 18px;
+    }
+
+    & .msg {
+      strong {
+        color: #dc0606;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__btn-group {
+    display: flex;
+    gap: 15px 50px;
+    padding: 17px 47px 18px;
+
+    @media screen and (max-width: 450px) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    @media screen and (max-width: 400px) {
+      padding: 20px 10px 18px;
+    }
+  }
+}
+
+.form-footer {
+  background-color: #e6eef3;
+  border-bottom: none;
+  padding: 16px 47px 20px;
+  margin-top: 20px;
+  margin-bottom: -16px;
+
+  @media screen and (max-width: 400px) {
+    padding: 16px 10px 20px;
+  }
+
+  .send-email-form {
+    .wrapper {
+      display: flex;
+
+      @media screen and (max-width: 450px) {
+        flex-direction: column;
+        row-gap: 10px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    &__input {
+      box-sizing: border-box;
+      border: none;
+      flex-basis: 170px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "BOG2018", sans-serif;
+      max-height: 37px;
+      min-width: 0;
+      outline: none;
+      padding: 0 10px;
+
+      &::placeholder {
+        font-weight: 400;
+        color: #3a3a3a;
+        opacity: 0.5;
+      }
+
+      &.invalid {
+        border: 1px solid #ee3b37;
+      }
+    }
+
+    &__submit-btn {
+      height: 37px;
+      width: 140px;
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+      }
+    }
+
+    &__error-msg {
+      color: #ee3b37;
+      font-size: 12px;
+    }
+  }
+
+  & .email-sent-error {
+    color: #ee3b37;
+    font-size: 15px;
+    margin: 10px 0 0;
+  }
+
+  & .email-sent-success {
+    color: #259800;
+  }
+}

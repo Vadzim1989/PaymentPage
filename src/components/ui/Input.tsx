@@ -45,6 +45,7 @@ const Input = ({ label, name, rules, className, mask, onBlur: externalOnBlur, ..
     id: name,
     ...rest,
     name: fieldName,
+    type: name === 'cvc' ? 'password' : 'text',
     value: value ?? '',
     onChange,
     onBlur: (e: React.FocusEvent<HTMLInputElement>) => {

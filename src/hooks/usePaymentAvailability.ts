@@ -9,20 +9,15 @@ export function usePaymentAvailability() {
   const location = useLocation();
 
   const { fetchWithLoader } = useLoader();
-  const { checkPaymentState, setPaymentState } = usePayment();
+  const { checkPaymentState, setPaymentState, paymentState } = usePayment();
   const token = location.hash.slice(1);
   const statePayment = location.state?.payment;
 
   // Все сайд-эффекты (запрос, setState, навигация) выполняются в useEffect,
   // а не во время рендера.
   useEffect(() => {
-    if (!token) {
-      navigate({ pathname: "main", search: location.search });
-      return;
-    }
-
     if (statePayment) {
-      setPaymentState(JSON.parse(statePayment));
+      setPaymentState(statePayment);
       return;
     }
 
@@ -43,4 +38,6 @@ export function usePaymentAvailability() {
     checkPaymentState,
     fetchWithLoader,
   ]);
+
+  return paymentState;
 }

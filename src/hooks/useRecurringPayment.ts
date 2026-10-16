@@ -1,5 +1,6 @@
 import Formatter from "@/utils/formatter";
 import { useLocation } from "react-router-dom";
+import { getQueryParams } from "@/utils/queryParams";
 
 export function useRecurringPayment() {
     const location = useLocation();
@@ -30,11 +31,8 @@ export function useRecurringPayment() {
     };
 
     function getRecurringManagementUrl(data, defaultUrl) {
-        const rowQuery = (() => {
-            const query = new URLSearchParams(location.search);
-            return Object.fromEntries(query.entries()) as Record<string, string>;
-        });
-        const { back_url_s } = rowQuery() || {};
+        const rowQuery = getQueryParams(location.search);
+        const { back_url_s } = rowQuery || {};
         const url = back_url_s || data.options?.successBackUrl;
         if (!url) return defaultUrl;
         
