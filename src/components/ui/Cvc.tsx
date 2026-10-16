@@ -35,6 +35,7 @@ const Cvc = ({
       validate: {
         minCvcLength: (value: string) => {
           const digits = (value ?? '').replace(/\D/g, '');
+          if (!isRequired && !digits.length) return true;
           if (digits.length >= minCvcLength) return true;
           return (
             t('errors.app.validation.length', { number: minCvcLength }) ||
