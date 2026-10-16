@@ -21,6 +21,16 @@ export function usePaymentAvailability() {
       return;
     }
 
+    if (token) {
+      navigate(
+          {
+            pathname: '/',
+            search: location.search,
+            hash: location.hash,
+          }
+        );
+    }
+
     const cb = async () => {
       const response = await paymentService().state(token);
 

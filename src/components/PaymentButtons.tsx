@@ -26,7 +26,6 @@ export const PaymentButtons: React.FC<PaymentButtonsProps> = ({
 
   const [isShowApplePay, setIsShowApplePay] = useState(false);
 
-  // Деструктуризация с дефолтными значениями (аналог toRefs + значение по умолчанию)
   const {
     isApplePayEnabled = false,
     isApplePayOnly = false,
@@ -54,10 +53,8 @@ export const PaymentButtons: React.FC<PaymentButtonsProps> = ({
            !(isGooglePayOnly || isApplePayOnly);
   }, [isApplePayEnabled, isGooglePayEnabled, isGooglePayOnly, isApplePayOnly]);
 
-  // Условие для ошибки (используем !isSupportApplePay вместо несуществующего applePaySession)
   const showApplePayError = isApplePayEnabled && isApplePayOnly && !isSupportApplePay;
 
-  // Сайд-эффект для проверки Apple Pay (аналог логики вне watch/computed в Vue)
   useEffect(() => {
     if (typeof window === 'undefined' || !window.ApplePaySession) {
       return;

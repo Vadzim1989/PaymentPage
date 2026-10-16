@@ -32,7 +32,7 @@ const Expiry = ({
         if (!digits) return true;
         const num = parseInt(digits, 10);
         if (isNaN(num) || num < 1 || num > 12) {
-          return t('ui.input.expiryMonth.invalid') || 'Invalid month';
+          return t('errors.app.validation.expiryMonth') || 'Invalid month';
         }
         return true;
       };
@@ -46,7 +46,7 @@ const Expiry = ({
         const year = 2000 + parseInt(digits, 10);
         const currentYear = new Date().getFullYear();
         if (year < currentYear) {
-          return t('ui.input.expiryYear.expired') || 'Card is expired';
+          return t('errors.app.validation.expiryYear') || 'Card is expired';
         }
         return true;
       };

@@ -73,7 +73,14 @@ const Input = ({ label, name, rules, className, mask, onBlur: externalOnBlur, ..
         )}
       </div>
 
-      {value && isVisibleClearIcon && (
+      {
+        value &&
+        isVisibleClearIcon &&
+        (
+          rest.type !== 'expiryYear' &&
+          rest.type !== 'expiryMonth' &&
+          name !== 'cvc'
+        ) && (
         <div className="clear-icon" onClick={handleClear}>
           <img src={deleteIcon} alt="Clear Icon" />
         </div>

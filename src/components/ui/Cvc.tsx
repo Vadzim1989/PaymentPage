@@ -37,7 +37,7 @@ const Cvc = ({
           const digits = (value ?? '').replace(/\D/g, '');
           if (digits.length >= minCvcLength) return true;
           return (
-            t('ui.input.cvc.minLengthError') ||
+            t('errors.app.validation.length', { number: minCvcLength }) ||
             `CVC must be at least ${minCvcLength} digits`
           );
         },

@@ -22,7 +22,9 @@
     width: initial;
 
     &:checked + label::before {
-      background-image: url("~@/img/checkmark.svg");
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyBzdHJva2Utd2lkdGg9IjAuNTAxIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iOD4iIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDggNiI+PHBhdGggZD0iTS0wLjIsNC4yIEwzLjcsMC4zIEw2LjIsMy44IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMzc1MWIiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=");
+      background-size: 16px 16px;
+      transform: rotate(180deg);
     }
     &:focus + label::before {
       border-color: #f3751b;

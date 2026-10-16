@@ -219,7 +219,8 @@ const Main = () => {
   );
 
   const isPaymentButtonVisible = useMemo(() => {
-    return paymentState?.params?.card_on_file !== 'CIT';
+    if (paymentState?.params?.card_on_file === 'CIT') return false;
+    return true;
   }, [paymentState]);
 
   const isFormHeaderVisible = useMemo(

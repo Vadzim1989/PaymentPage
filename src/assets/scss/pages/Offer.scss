@@ -1,0 +1,262 @@
+.offer-form {
+  .container {
+    background: #494949;
+    display: block;
+    height: 100%;
+    position: fixed;
+    padding: 0;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
+
+  .form {
+    border-radius: 10px;
+    margin: 1% auto;
+    max-width: 580px;
+    min-height: 500px;
+    padding: 30px 50px;
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+      max-width: 480px;
+      padding: 30px 20px;
+    }
+
+    @media screen and (max-width: 400px) {
+      padding: 30px 10px;
+    }
+
+    .form-body {
+      padding: 15px 0 35px;
+
+      .result-table {
+        &__header {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+
+          .merchant-logo {
+            height: 60px;
+            width: 80px;
+            display: flex;
+            flex-shrink: 0;
+
+            img {
+              height: 100%;
+              width: auto;
+              max-width: 100%;
+            }
+          }
+        }
+
+        &__item {
+          align-items: center;
+          border-bottom: 1px solid rgba(204, 204, 204, 0.42);
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 0;
+
+          .item__key,
+          .item__value {
+            font-size: 12px;
+            font-weight: 700;
+            word-break: break-word;
+          }
+
+          .item__key {
+            width: 30%;
+          }
+        }
+      }
+
+      .otp-container {
+        font-size: 12px;
+
+        .otp-title {
+          font-weight: 500;
+          margin: 42px 0 30px;
+        }
+
+        .input-container {
+          input {
+            border-radius: 4px;
+            border: 1px solid #d8d8d8;
+            box-sizing: border-box;
+            color: #575757;
+            font-family: "Bullet";
+            font-size: 20px;
+            font-weight: 600;
+            height: 48px;
+            padding: 0 10px 0 18px;
+            outline: none;
+            width: 230px;
+
+            &::placeholder {
+              font-size: 12px;
+              font-family: "BOG2018", sans-serif;
+              font-weight: 700;
+              opacity: 0.5;
+            }
+          }
+
+          .authentication-field {
+            align-items: center;
+            display: flex;
+
+            @media screen and (max-width: 400px) {
+              align-items: flex-start;
+              flex-direction: column;
+            }
+          }
+
+          &__btn-otp-resend {
+            align-items: center;
+            background-color: #fff;
+            border: none;
+            color: #375a82;
+            cursor: pointer;
+            display: flex;
+            font-family: "BOG2018Headline", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 35px;
+            transition: 0.5s ease;
+
+            @media screen and (max-width: 400px) {
+              margin-top: 10px;
+              margin-left: 0;
+            }
+
+            &:hover {
+              .lds-dual-ring::after {
+                animation: lds-dual-ring 2.5s linear infinite;
+              }
+            }
+
+            .lds-dual-ring {
+              display: inline-block;
+              height: 22px;
+              margin-right: 8px;
+              width: 22px;
+
+              &::after {
+                border-radius: 50%;
+                border: 3px solid #375a82;
+                border-top-color: rgb(55, 90, 130);
+                border-right-color: rgb(55, 90, 130);
+                border-bottom-color: rgb(55, 90, 130);
+                border-left-color: rgb(55, 90, 130);
+                border-color: #375a82 transparent;
+                content: " ";
+                display: block;
+                height: 15px;
+                margin: 0;
+                width: 15px;
+              }
+            }
+          }
+
+          &__error {
+            color: #ee3b37;
+            margin-top: 10px;
+          }
+
+          &__otp-sending-result {
+            padding-top: 14px;
+            font-size: 16px;
+
+            &.success {
+              color: #259800;
+            }
+
+            &.failed {
+              color: #ee3b37;
+            }
+          }
+
+          &__timer {
+            padding-top: 14px;
+          }
+        }
+      }
+
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 17px auto 0;
+
+        .btn {
+          border-radius: 5px;
+        }
+
+        .sendOTP {
+          background-color: #5a7697;
+          color: #c9d2dd;
+        }
+
+        .cancel {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    .form-footer {
+      border-bottom: none;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 35px;
+      word-break: break-word;
+
+      .brand-logo {
+        flex-shrink: 0;
+        width: 70px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-size: 13px;
+          font-weight: 500;
+        }
+
+        a {
+          color: #000;
+          font-size: 11px;
+          font-weight: 600;
+          margin-top: 6px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .treeDS-info {
+    &__title {
+      margin-bottom: 16px;
+    }
+
+    &__description {
+      line-height: 1.5;
+    }
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

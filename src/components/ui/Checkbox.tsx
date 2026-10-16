@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useController } from 'react-hook-form';
+import { useFormContext, Controller } from 'react-hook-form';
 
 interface CheckboxProps {
   name: string;
@@ -9,23 +9,29 @@ interface CheckboxProps {
 }
 
 const Checkbox = ({ name, className, label, children }: CheckboxProps) => {
-  const {
-    field: { value, onChange, onBlur, ref: fieldRef },
-  } = useController({ name, defaultValue: false });
+  const { control } = useFormContext();
 
   return (
-    <div className={['checkbox', className].filter(Boolean).join(' ')}>
-      <input
-        id={name}
-        name={name}
-        type="checkbox"
-        checked={!!value}
-        onChange={(e) => onChange(e.target.checked)}
-        onBlur={onBlur}
-        ref={fieldRef}
-      />
-      <label htmlFor={name}>{children ?? label}</label>
-    </div>
+    <Controller
+      name={name}
+      control={control}
+      defaultValue={false}
+      render={({ field: { value, onChange, onBlur, ref } }) => {
+        return (
+          <div className={['checkbox', className].filter(Boolean).join(' ')}>
+            <input
+              id={name}
+              type="checkbox"
+              checked={!!value}
+              onChange={(e) => onChange(e.target.checked)}
+              onBlur={onBlur}
+              ref={ref}
+            />
+            <label htmlFor={name}>{children ?? label}</label>
+          </div>
+        );
+      }}
+    />
   );
 };
 

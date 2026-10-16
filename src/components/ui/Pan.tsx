@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { card } from '@/utils/creditcard';
 import Input from './Input';
 
 interface PanProps {
@@ -25,13 +26,28 @@ const Pan = ({
     () => ({
       required: true,
       validate: {
-        minPanLength: (value: string) => {
-          const digits = (value ?? '').replace(/\D/g, '');
-          return (
-            digits.length >= minPanLength ||
-            t('ui.input.pan.minLengthError') ||
-            `PAN must be at least ${minPanLength} digits`
-          );
+        panValidation: (value: string | undefined) => {
+          if (!value) return true;
+
+          const MIN_PAN_LENGTH = minPanLength || 13;
+          const parsedValue = card.parse(value);
+
+          const isLuhnValid = card.luhn(parsedValue);
+          const hasValidLength = minPanLength
+            ? parsedValue.length >= minPanLength
+            : parsedValue.length >= MIN_PAN_LENGTH;
+
+          if (isLuhnValid && hasValidLength) {
+            return true;
+          }
+
+          if (minPanLength && parsedValue.length < minPanLength) {
+            return t('errors.app.validation.panLength', {
+              number: minPanLength,
+            });
+          }
+
+          return t('errors.app.validation.pan');
         },
       },
     }),

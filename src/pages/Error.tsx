@@ -4,7 +4,7 @@ import { eventBusDispatcher } from "@/utils/eventBusDispatcher";
 import { useLocation } from "react-router-dom";
 import { getQueryParams } from "@/utils/queryParams";
 
-import "@/assets/scss/pages/Error.scss";
+import styles from "@/assets/scss/pages/Error.module.scss";
 
 const Error = () => {
     const { t } = useTranslation();
@@ -23,9 +23,9 @@ const Error = () => {
 
     return (
         <div className="container">
-            <div className="form">
-                <h2 className="text">{ t("pages.error.API_ERR.title") }</h2>
-                <p className="text">{ t("pages.error.API_ERR.info") }</p>
+            <div className={styles.form}>
+                <h2 className={styles.h2}>{ t("pages.error.API_ERR.title") }</h2>
+                <p className={styles.text}>{ t("pages.error.API_ERR.info") }</p>
                 {
                     back_url_f && (
                         <a
