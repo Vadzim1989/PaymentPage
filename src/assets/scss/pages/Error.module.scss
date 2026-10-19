@@ -1,3 +1,11 @@
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 568px;
+  padding: 0 5px;
+  width: 100%;
+}
+
 .form {
   padding: 18px 36px;
   text-align: center;
@@ -8,10 +16,10 @@
     margin-bottom: 16px;
   }
 
-  a.btn {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    text-decoration: none;
+  a:global(.btn) {
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      text-decoration: none;
   }
 }

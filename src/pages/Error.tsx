@@ -14,17 +14,19 @@ const Error = () => {
     const queryParams = getQueryParams(location.search);
     const { back_url_f } = queryParams || {};
 
-    globalLoaderShow();
     useEffect(() => {
+        globalLoaderShow();
+
         if (window.top && window.self !== window.top) {
             window.top.postMessage('iframe-close','*');
         }
+        // eslint-disable-next-line
     }, []);
 
     return (
-        <div className="container">
+        <div className={styles.container}>
             <div className={styles.form}>
-                <h2 className={styles.h2}>{ t("pages.error.API_ERR.title") }</h2>
+                <h2>{ t("pages.error.API_ERR.title") }</h2>
                 <p className={styles.text}>{ t("pages.error.API_ERR.info") }</p>
                 {
                     back_url_f && (
